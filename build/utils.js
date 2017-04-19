@@ -50,10 +50,17 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass', scssOptions),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
+}
+
+let scssOptions = {
+  includePaths: [
+    '~src/styles'
+  ],
+  data: '@import "~@/styles/app";'
 }
 
 // Generate loaders for standalone style files (outside of .vue)
