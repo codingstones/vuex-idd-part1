@@ -1,0 +1,83 @@
+/*------------------------------------*\
+  $modal
+\*------------------------------------*/
+
+.modal__header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1rem 0;
+  background-color: $grayLighter;
+  h1 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .actions {
+    .secondary {
+      display: inline-block;
+      padding: 0.85em 1em;
+      text-decoration: underline;
+      position: relative;
+      top: -0.4em;
+    }
+    .button {
+      margin-bottom: 0;
+    }
+  }
+  .title {
+    .icon {
+      display: inline-block;
+      margin: 0 0.4em;
+      font-size: 0.8em;
+      color: $accent-color;
+    }
+    .action {
+      display: inline-block;
+      vertical-align: baseline;
+      font-size: 0.8rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .meta {
+      font-size: 0.9rem;
+      color:$text-color;
+      opacity: $opacity-over-gray;
+    }
+  }
+}
+
+.modal__scroll {
+  background-color: $grayLighter;
+  max-height: 80%;
+  overflow-y:auto;
+
+  .hr span {
+    background:$grayLighter;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top:2rem;
+  right:2rem;
+  font-size: 1.4rem;
+  color:$text-color;
+  opacity: $opacity-over-gray /2;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.modal-inner {
+  padding: 0.6rem;
+}
+
+.centered {
+  max-height: calc(100% - 100px);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

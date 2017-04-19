@@ -1,0 +1,224 @@
+/*------------------------------------*\
+  $template-page
+\*------------------------------------*/
+
+$content-nav-width:       rem-calc(280);
+$main-bar-height:         rem-calc(45);
+$content-header-height:   rem-calc(58);
+
+.template-page {
+  width: 100%;
+  //height:100%;
+  background-color: $white;
+}
+
+.main-bar {
+  width: 100%;
+  min-height: $main-bar-height;
+  z-index: 2;
+  background-color: $main-bar__bg-color;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: stretch;
+}
+
+.main-content {
+  width:100%;
+}
+
+.content-header {
+  position: relative;
+  width: 100%;
+  min-height: $content-header-height;
+  background-color: lighten($accent-color, 60);
+  border-bottom: 1px solid lighten($accent-color, 40);
+  h1 {
+    display: inline-block;
+    padding: 1rem;
+    margin-bottom: 0;
+    font-size:1rem;
+    font-weight: 600;
+    color:$accent-color;
+    .icon {
+      display: inline-block;
+      display:none; //TODO: Delete icon in html templates
+      color:$gray;
+      font-size:2.8em;
+      vertical-align: middle;
+      padding:1rem;
+    }
+  }
+}
+
+.content-view {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.content-nav {
+  flex: 0 0 $content-nav-width;
+  width:$content-nav-width;
+  z-index: 1;
+  overflow-y:auto;
+  background-color: $grayLighter;
+  border-right: 1px solid darken($gray, 5);
+  min-height: calc(100vh - #{$main-bar-height} - #{$content-header-height} );
+}
+
+.content-panel {
+  flex: 1 1 auto;
+  display:flex;
+  flex-flow:column nowrap;
+}
+
+.brand {
+  padding: 0.2rem 1rem;
+  cursor:pointer;
+  text-align: center;
+}
+
+.icon--superadmin {
+  font-size: $logo-icon-size;
+  color: $accent-color;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.main-nav {
+  position: relative;
+}
+
+.content-panel__tabs {
+  display: block;
+  position: relative;
+  height: 0;
+}
+
+.content-panel__header {
+  flex: 0 0 auto;
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 1rem;
+  h1 {
+    margin-bottom: 0;
+  }
+  .actions {
+    .button {
+      @include secondaryButton;
+    }
+    .secondary {
+      display: inline-block;
+      padding: 0.85em 1em;
+      text-decoration: underline;
+      position: relative;
+      top: -0.4em;
+    }
+  }
+}
+.content-panel__subheader {
+  flex: 0 0 auto;
+}
+
+.content-panel__footer {
+  flex: 0 0 auto;
+  padding: 2rem 0;
+}
+
+.content-panel__scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+[class*="content-menu__section"]  {
+  padding: 0.6rem 0.3rem;
+  border-bottom: 1px solid darken($gray, 5);
+  font-size: 0.8rem;
+  label, input, select {
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+  &.no-border {
+    border:0;
+  }
+}
+
+.content-menu__navigation {
+  padding: 0.6rem 0.3rem 0;
+  a {
+    display: inline-block;
+    color: $accent-color !important;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .icon {
+    display: inline-block;
+    margin-right:0.3rem;
+    vertical-align: bottom;
+    font-size: 0.8rem;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.fixed {
+  position: fixed;
+  top:0;
+  left: $content-nav-width;
+  width: calc(100% - #{$content-nav-width});
+  z-index: 100;
+}
+
+.user-avatar {
+  @include userAvatar;
+}
+
+.user-avatar--default {
+  background-image:url("#{$imgUrl}/avatar.png");
+}
+
+.iconletters {
+  @include iconLetters;
+}
+
+.color-dropdown-container {
+  position: relative !important;
+}
+
+.color-dropdown {
+  position: absolute !important;
+  top: 1rem !important;
+//  visibility: visible !important;
+//  display: block !important;
+  right:0rem !important;
+  max-width: (1.6rem * 6) + 1rem;
+  .colors {
+    a {
+      display:block;
+      float:left;
+      width:1.6rem;
+      height:1.6rem;
+      &:hover {
+        border: 3px solid rgba($white,0.5);
+      }
+      &.active {
+        border: 3px solid rgba($white,1);
+      }
+    }
+  }
+}
+
+@media print {
+  .main-bar, .content-nav {
+    display:none;
+  }
+  .content-panel__scroll {
+    overflow-y: visible;
+  }
+}

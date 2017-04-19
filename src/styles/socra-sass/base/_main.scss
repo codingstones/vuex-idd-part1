@@ -1,0 +1,256 @@
+//------------------------------------
+//  $MAIN
+//------------------------------------
+
+
+
+// No Animations in Android
+// -------------------------
+.touch.no-webgl * {
+  -webkit-animation:none !important;
+}
+
+
+// Common styles
+// -------------------------
+
+html, body {
+  // this is to get footer absolute positioning in modals
+  height:100%;
+}
+
+body {
+  font-family: $commonFontFamily;
+  color: $text-color;
+  background-color: $bg-color;
+  -webkit-font-smoothing: antialias;
+}
+strong, h1, h2, h3, h4, h5, h6 {
+  font-family: $commonFontFamily;
+}
+a {
+  color: $link-color;
+  @include easeInOut;
+  text-decoration: none;
+}
+a:hover {
+  &:hover {
+    color: $link--hover-color;
+  }
+}
+
+hgroup, .hgroup {
+  margin-bottom:1em;
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom:0;
+  }
+}
+
+select {
+  font-size: 0.9rem;
+}
+
+// Helper styles
+// -------------------------
+.underline-hover {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+//// Animations
+//// -------------------------
+//@for $i from 1 through 10 {
+//  .animate-#{$i} {
+//    @extend .animated;
+//    @extend .fadeIn;
+//    animation-delay: $i * 200ms;
+//  }
+//}
+
+// Icon colors
+// -------------------------
+
+.icon-chat {
+  color: $yellow;
+}
+.icon-clock {
+  color: $blue;
+}
+.icon-bell {
+  color: $orange;
+}
+.icon-emoji-smile {
+  color: $green;
+}
+.icon-emoji-smile-mid {
+  color: $orange;
+}
+.icon-emoji-sad {
+  color: $red;
+}
+.icon-check {
+  color: $grayDark;
+}
+
+
+// Warning classes
+// -------------------------
+
+.error {
+  color:$error;
+}
+
+.input-error{
+}
+.input-error input, .input-error textarea {
+  background-color: $errorLighter;
+  color:$error;
+}
+
+.highlight {
+  background-color: $yellow;
+  color: $text-color;
+}
+
+
+// Pills
+// -------------------------
+
+.pill {
+  padding: 0.1rem 0.2rem;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: $accent-color;
+  color: $accent--negative-color;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.pill--warning {
+  background-color: map-get($foundation-palette, warning);
+}
+
+// Agent colors
+// -------------------------
+
+.color1{background-color:#80004c !important;}
+.color2{background-color:#bf0072 !important;}
+.color3{background-color:#ff0098 !important;}
+.color4{background-color:#ff33ad !important;}
+.color5{background-color:#ff66c1 !important;}
+
+.color6{background-color:#480066 !important;}
+.color7{background-color:#6c0099 !important;}
+.color8{background-color:#9000cc !important;}
+.color9{background-color:#a633d6 !important;}
+.color10{background-color:#bc66e0 !important;}
+
+.color11{background-color:#005c80 !important;}
+.color12{background-color:#0089bf !important;}
+.color13{background-color:#00b7ff !important;}
+.color14{background-color:#33c5ff !important;}
+.color15{background-color:#66d4ff !important;}
+
+.color16{background-color:#006750 !important;}
+.color17{background-color:#009b78 !important;}
+.color18{background-color:#00cea0 !important;}
+.color19{background-color:#33d8b3 !important;}
+.color20{background-color:#99ebd9 !important;}
+
+.color21{background-color:#ff3000 !important;}
+.color22{background-color:#ff6700 !important;}
+.color23{background-color:#ff9700 !important;}
+.color24{background-color:#ffac33 !important;}
+.color25{background-color:#ffc166 !important;}
+
+
+.personColor{background-color:#480066 !important;}
+
+
+// Button icons
+// -------------------------
+
+.button {
+  .icon {
+    position: relative;
+    top:0.1em;
+    opacity:0.5;
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    .icon {
+      opacity:1;
+    }
+  }
+  .loader-inner{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    bottom: 0.2rem;
+    opacity:0.5;
+    div {
+      background-color: $accent--negative-color;
+    }
+  }
+  &.success {
+    color: $button__text-color !important;
+  }
+
+}
+
+// Search box
+// -------------------------
+.search-box {
+  position: relative;
+}
+
+.search-box__input {
+  &:focus {
+    padding-right:2em;
+  }
+}
+
+.search-box__icon {
+  position: absolute;
+  top:0;
+  right:0;
+  button {
+    padding: 0.5em;
+  }
+  .icon {
+    position: relative;
+    top: 0.1em;
+    opacity: 0.3 !important;
+    font-size: 0.9rem !important;
+    cursor:pointer !important;
+  }
+}
+
+// Flexbox angular helpers
+// -------------------------
+
+.flexbox-angular--column {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 1 auto;
+}
+
+.flexbox-angular--row {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 auto;
+}
+
+
+// Pending Styles
+// -------------------------
+
+.PENDING {
+  opacity:0.3;
+  outline:1px solid rgba(255,0,0,0.5);
+}
+
+

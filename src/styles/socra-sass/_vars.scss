@@ -1,0 +1,103 @@
+/*------------------------------------*\
+    COMMON VARS.SCSS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    COLORS
+\*------------------------------------*/
+
+
+// Accent colors
+// -------------------------
+$yellow: #FFE200;
+$yellowLighter: #FFF5A9;
+$orange: #E97924;
+$red: #FF0048;
+$green: #128A70;
+$greenLighter: #BEDC25;
+$blue: #004359;
+$black: #282828;
+$white: #FFF;
+$grayDark: #898989;
+$grayDarker: #777;
+$gray: #E6E6E6;
+$grayLighter: #F0F0F0;
+
+
+
+$error: #BF1E2D;
+$errorLighter: #FAE2E4;
+
+
+// UI Configurable Colors
+// -------------------------
+$accent-color:                 $green; //used in general buttons bg color
+$accent--negative-color:       $white; // used in general buttons text color
+$secondary-color:              $orange; //used in other buttons bg color
+$secondary--negative-color:    $white; //used in other buttons text color
+
+$bg-color:                     $white;
+$bg--secondary-color:          $gray;
+
+$text-color:                   $black;
+$text--secondary-color:        $gray;
+$link-color:                   $green;
+$link--hover-color:            $green;
+
+$button__bg-color:             $green;
+$button__text-color:           $white;
+$button--hover__bg-color:      darken($green,10%);
+$button--hover__text-color:    $white;
+
+$secondary-button__bg-color:           $secondary-color;
+$secondary-button__text-color:         $secondary--negative-color;
+$secondary-button--hover__bg-color:    darken($secondary-color,10%);
+$secondary-button--hover__text-color:  $secondary--negative-color;
+
+$neutral-button__bg-color:             $gray;
+$neutral-button__text-color:           $white;
+$neutral-button--hover__bg-color:      darken($gray,10%);
+$neutral-button--hover__text-color:    $white;
+
+$logo-color:                            lighten($accent-color, 30);
+$main-bar__bg-color:                    $green;
+
+
+// UI Configurable Typography
+// -------------------------
+$brandFontFamily:           "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$secondaryFontFamily:       "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+// Common Paths
+// -------------------------
+$path: "~/styles/socra-sass/";
+$imgDir: "img";
+$fontsDir: "fonts";
+$imgUrl: $path+$imgDir;
+$fontsPath: "./assets/fonts";
+
+// Custom vars
+// -------------------------
+$brand-round: 4px;
+$gutter: 16px;
+$innerWidth: 1175px; // centered inner into main sections
+$commonColor:$black;
+$commonFontFamily:                "Helvetica Neue", Helvetica, Arial, sans-serif;
+$commonSecondaryFontFamily:       "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$logo-icon-size:2.3rem;
+$main-menu-icon-size:1.6rem;
+$opacity-over-gray:0.5;
+
+$over-chat-margin-bottom: 20rem;
+$max-width-publications: 540px;
+
+$session-list-font-size--large: 1.05rem;
+$session-list-font-size--small: 0.85rem;
+
+
+
+
+
