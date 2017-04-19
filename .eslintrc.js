@@ -8,11 +8,12 @@ module.exports = {
   },
   env: {
     browser: true,
+    mocha: true
   },
   extends: 'airbnb-base',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html', 'mocha'
   ],
   // check if imports actually resolve
   'settings': {
