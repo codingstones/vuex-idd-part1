@@ -14,9 +14,11 @@ const fakeSessions = [{
 }];
 
 function retrieveSessions() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(fakeSessions);
+      const probability = Math.random();
+      if (probability < 0.6) resolve(fakeSessions);
+      else reject('Connection problem');
     }, 1000);
   });
 }
