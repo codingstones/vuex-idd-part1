@@ -25,7 +25,7 @@ export const store = new Vuex.Store({
   },
   getters: {
     sessions: state => state.sessions,
-    isLoading: state => state.loading,
+    loading: state => state.loading,
     error: state => state.error,
   },
 });

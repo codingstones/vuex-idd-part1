@@ -7,6 +7,11 @@
     </div>
 
     <div class="content-panel__scroll" id="session-list-panel">
+
+      <h2 class="title error" v-if="loading">LOADING...</h2>
+
+      <h2 class="error" v-if="error">SERVER ERROR: {{ error }}</h2>
+      
       <div class="session-list">
         <div class='session-list__item'
              v-for="(session, index) in sessions">
@@ -26,9 +31,9 @@
             {{ session.place }}
           </div>
         </div>
-
       </div>
     </div>
+
 
     <div class="content-panel__footer">
     </div>
@@ -38,25 +43,18 @@
 
 <script>
 
-  const fakeSessions = [{
-    title: 'User story mapping',
-    description: 'Bring your post-its',
-    facilitator: 'Mike Smith',
-    place: 'Parrot room',
-    datetime: 'Today at 6 PM',
-  },
-  {
-    title: 'BDD',
-    description: 'Beer Driven Development',
-    facilitator: 'Jessica Oliver',
-    place: 'Bar',
-    datetime: 'Tomorrow at 12 AM',
-  }];
+  import * as Vuex from 'vuex';
 
   export default {
     name: 'sessions',
-    data() {
-      return { sessions: fakeSessions };
+    methods: {
+      ...Vuex.mapActions(['retrieveSessions']),
+    },
+    computed: {
+      ...Vuex.mapGetters(['loading', 'sessions', 'error']),
+    },
+    created() {
+      this.retrieveSessions();
     },
   };
 </script>
