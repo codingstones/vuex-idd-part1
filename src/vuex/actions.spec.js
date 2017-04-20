@@ -13,15 +13,13 @@ describe('Session actions', () => {
   });
 
   describe('When retrieving sessions', () => {
-    let commit,
-      state;
+    let commit;
     beforeEach(() => {
       commit = sinon.stub();
-      state = {};
     });
 
     it('finishes with success', () => {
-      retrieveSessions.run({ commit, state });
+      retrieveSessions.run({ commit });
 
       expect(commit).calledWith(FETCH_SESSIONS);
       expect(commit).calledWith(FETCH_SESSIONS_SUCCESS, A_SESSION_LIST);
@@ -33,7 +31,7 @@ describe('Session actions', () => {
 
       retrieveSessions = retrieveSessionsAction(sessionsApiStub);
 
-      retrieveSessions.run({ commit, state });
+      retrieveSessions.run({ commit });
 
       expect(commit).calledWith(FETCH_SESSIONS);
       expect(commit).calledWith(FETCH_SESSIONS_ERROR, backendError);
