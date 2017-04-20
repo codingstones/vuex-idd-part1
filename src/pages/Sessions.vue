@@ -11,7 +11,7 @@
       <h2 class="title error" v-if="loading">LOADING...</h2>
 
       <h2 class="error" v-if="error">SERVER ERROR: {{ error }}</h2>
-      
+
       <div class="session-list">
         <div class='session-list__item'
              v-for="(session, index) in sessions">

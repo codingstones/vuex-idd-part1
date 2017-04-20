@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { buildRetrieveSessions } from './actions';
+import { buildRetrieveSessionsAction } from './actions';
 import { fetchSessions, fetchSessionsError, fetchSessionsSuccess } from './mutations';
 
 Vue.config.debug = true;
@@ -21,7 +21,7 @@ export const store = new Vuex.Store({
     FETCH_SESSIONS_ERROR: fetchSessionsError,
   },
   actions: {
-    retrieveSessions: buildRetrieveSessions(),
+    retrieveSessions: buildRetrieveSessionsAction(),
   },
   getters: {
     sessions: state => state.sessions,

@@ -1,5 +1,5 @@
 import { sinon, expect, resolvedStub, rejectedStub } from '../../test/utils/test-helpers';
-import { RetrieveSessions } from './actions';
+import { retrieveSessionsAction } from './actions';
 import { FETCH_SESSIONS, FETCH_SESSIONS_ERROR, FETCH_SESSIONS_SUCCESS } from './mutations';
 
 describe('Session actions', () => {
@@ -9,7 +9,7 @@ describe('Session actions', () => {
 
   beforeEach(() => {
     sessionsApiStub = resolvedStub('retrieveSessions', A_SESSION_LIST);
-    retrieveSessions = new RetrieveSessions(sessionsApiStub);
+    retrieveSessions = retrieveSessionsAction(sessionsApiStub);
   });
 
   describe('When retrieving sessions', () => {
@@ -31,7 +31,7 @@ describe('Session actions', () => {
       const backendError = Error('Backend Error');
       sessionsApiStub = rejectedStub('retrieveSessions', backendError);
 
-      retrieveSessions = new RetrieveSessions(sessionsApiStub);
+      retrieveSessions = retrieveSessionsAction(sessionsApiStub);
 
       retrieveSessions.run({ commit, state });
 
