@@ -49,6 +49,7 @@
     name: 'sessions',
     methods: {
       ...Vuex.mapActions(['retrieveSessions']),
+      openSessionDetail: sessionId => alert(`Session ${sessionId.toString()} clicked`),
     },
     computed: {
       ...Vuex.mapGetters(['loading', 'sessions', 'error']),

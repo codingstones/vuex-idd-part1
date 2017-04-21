@@ -1,4 +1,5 @@
 const fakeSessions = [{
+  id: 1,
   title: 'User story mapping',
   description: 'Bring your post-its',
   facilitator: 'Mike Smith',
@@ -6,6 +7,7 @@ const fakeSessions = [{
   datetime: 'Today at 6 PM',
 },
 {
+  id: 2,
   title: 'BDD',
   description: 'Beer Driven Development',
   facilitator: 'Jessica Oliver',
