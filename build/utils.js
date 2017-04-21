@@ -56,7 +56,7 @@ exports.cssLoaders = function (options) {
   }
 }
 
-let scssOptions = {
+var scssOptions = {
   includePaths: [
     '~src/styles'
   ],
