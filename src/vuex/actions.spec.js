@@ -6,12 +6,6 @@ describe('Session actions', () => {
   const A_SESSION = {};
   const A_SESSION_LIST = [A_SESSION];
   let retrieveSessions, sessionsApiStub;
-
-  beforeEach(() => {
-    sessionsApiStub = resolvedStub('retrieveSessions', A_SESSION_LIST);
-    retrieveSessions = retrieveSessionsAction(sessionsApiStub);
-  });
-
   describe('When retrieving sessions', () => {
     let commit;
     beforeEach(() => {
@@ -19,6 +13,9 @@ describe('Session actions', () => {
     });
 
     it('finishes with success', () => {
+      sessionsApiStub = resolvedStub('retrieveSessions', A_SESSION_LIST);
+      retrieveSessions = retrieveSessionsAction(sessionsApiStub);
+
       retrieveSessions.run({ commit });
 
       expect(commit).calledWith(FETCH_SESSIONS);
