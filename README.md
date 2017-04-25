@@ -1,7 +1,9 @@
-# socravuex
+# Vuex + IDD: Part1 
+## (Frontend with fake backend)
 
 > Vuex spike with http/WS server
 
+This is the code for [the first article](https://medium.com/p/4b81d4088e54) on a series about unidirectional data flow architecture based on Vuex and IDD.
 ## Build Setup
 
 ``` bash
@@ -11,17 +13,6 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+# run unit tests
+npm run unit
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
